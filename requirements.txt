@@ -1,0 +1,6 @@
+transformers
+torch
+tensorflow
+nltk
+warnings
+gramformer
