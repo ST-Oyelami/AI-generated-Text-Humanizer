@@ -5,8 +5,6 @@ import re
 import nltk
 nltk.download('punkt_tab')
 from nltk.tokenize import sent_tokenize
-import warnings
-warnings.filterwarnings("ignore")
 import streamlit as st
 from gramformer import Gramformer
 

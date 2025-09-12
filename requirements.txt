@@ -3,5 +3,4 @@ torch
 tensorflow
 nltk
 warnings
-streamlit
 gramformer
