@@ -1,9 +1,10 @@
 streamlit
-transformers
+transformers==4.33.0
 torch
 tensorflow
 nltk
 tf-keras
 git+https://github.com/PrithivirajDamodaran/Gramformer.git
+
 
 
