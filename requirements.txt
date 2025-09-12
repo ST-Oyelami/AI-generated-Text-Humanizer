@@ -3,5 +3,7 @@ transformers
 torch
 tensorflow
 nltk
+tf-keras
 git+https://github.com/PrithivirajDamodaran/Gramformer.git
+
 
