@@ -13,14 +13,14 @@ from gramformer import Gramformer
 @st.cache_resource
 def load_all_models():
     #Initializing the model and its tokenizer
-    device = "cuda" if torch.cuda.is_available() else "cpu"
+    #device = "cuda" if torch.cuda.is_available() else "cpu"
     tokenizer = AutoTokenizer.from_pretrained("alykassem/FLAN-T5-Paraphraser")
     model = model = TFAutoModelForSeq2SeqLM.from_pretrained("alykassem/FLAN-T5-Paraphraser", from_pt=True)
     # Handling gramformer specially
     gf = Gramformer(models=1)
     return device, tokenizer, model, gf
 
-device, tokenizer, model, gf = load_all_models()
+tokenizer, model, gf = load_all_models()
 
 
 # Capitalize the first letter
