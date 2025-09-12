@@ -4,7 +4,9 @@ torch
 tensorflow
 nltk
 tf-keras
+tokenizers - - prefer-binary
 git+https://github.com/PrithivirajDamodaran/Gramformer.git
+
 
 
 
