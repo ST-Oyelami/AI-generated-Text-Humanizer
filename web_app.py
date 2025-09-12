@@ -1,6 +1,7 @@
 from transformers import AutoTokenizer, TFAutoModelForSeq2SeqLM
 import torch
 import tensorflow
+import re
 import nltk
 nltk.download('punkt_tab')
 from nltk.tokenize import sent_tokenize
@@ -31,6 +32,10 @@ def fix(sentence):
     if not sentence:
         return ""
     
+    if not re.search(r'[.!?]$', sentence):
+        sentence += ","
+        return sentence
+    
     sentence = sentence[0].upper() + sentence[1:]
     return sentence
 
@@ -43,7 +48,7 @@ def paraphrase(paragraph):
     paraphrased_sentences = []
     for sentence in sentences:
         inputs = tokenizer(sentence, return_tensors="tf")
-        outputs = model.generate(**inputs)
+        outputs = model.generate(**inputs, max_length=256,num_beams=4)
         paraphrased_result = tokenizer.decode(outputs[0], skip_special_tokens=True)
         corrected_text = gf.correct(paraphrased_result)
         paraphrased_sentences.append(fix(list(corrected_text)[0])) 
