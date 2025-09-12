@@ -1,11 +1,13 @@
+-- upgrade pip
 streamlit
 transformers==4.33.0
 torch
 tensorflow
 nltk
 tf-keras
-tokenizers - - prefer-binary
+tokenizers -- prefer-binary
 git+https://github.com/PrithivirajDamodaran/Gramformer.git
+
 
 
 
